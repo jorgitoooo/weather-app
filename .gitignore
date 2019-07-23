@@ -1,6 +1,8 @@
 .DS_Store
 
 server/node_modules
+server/.env
 client/.cache
 client/dist
+
 dist

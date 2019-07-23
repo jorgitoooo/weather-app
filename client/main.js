@@ -2,14 +2,14 @@ navigator.geolocation.getCurrentPosition(pos => {
     fetch(`http://localhost:5000/weather/all/${pos.coords.latitude}/${pos.coords.longitude}`)
     .then( res => res.json())
     .then(weather => {
-        populatePage(weather);
+        populatePageWith(weather);
     })
     .catch(error => console.log(error));
 });
 setInterval(updateTime, 1000);
 /****************************************************/
 
-function populatePage(weather) {
+function populatePageWith(weather) {
     populateCurrentWeather(weather.currently);
     pupulateHourlyWeather(weather.hourly);
     populateDailyWeather(weather.daily);
